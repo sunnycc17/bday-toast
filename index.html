@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/output.css" />
+    <title>QUACKIN' BIRTHDAY DESTRUCTION</title>
+    <script>
+      // 🤘 Hidden birthday console message
+      console.log(
+        "%cHappy Birthday, you glorious code warlock!",
+        "color: gold; font-size: 18px;"
+      );
+      console.log(
+        "%c🦆 May your ducks debug bugs and your toast never burn.",
+        "color: lightgreen;"
+      );
+      console.log("%cI love you. My dear best friend ‪‪❤︎‬", "color: pink;");
+    </script>
+  </head>
+  <body
+    class="bg-black text-white flex items-center justify-center min-h-screen flex-col p-6 overflow-hidden"
+  >
+    <h1
+      class="text-4xl sm:text-6xl font-bold text-yellow-400 mb-4 text-center animate-pulse"
+    >
+      QUACKIN' BIRTHDAY DESTRUCTION
+    </h1>
+
+    <!-- dancing duck gif -->
+    <img
+      src="https://i.pinimg.com/originals/08/c4/76/08c4761628f40079f261a81e99e6c56b.gif"
+      alt="Dancing duck"
+      class="w-48 h-48 mb-4 rounded-full shadow-2xl border-4 border-red-600 float"
+    />
+
+    <p class="text-lg sm:text-xl text-center mb-8 text-gray-300">
+      Rock on, code wizard. May your toast be crispy and your commits be clean.
+      🍞🔥
+    </p>
+
+    <!-- floating toast emoji -->
+    <div class="absolute top-12 left-8 text-4xl animate-bounce">🍞</div>
+    <div class="absolute bottom-12 right-8 text-4xl animate-bounce">🍞</div>
+    <div class="absolute top-1/2 right-20 text-4xl animate-bounce">🍞</div>
+
+    <a
+      href="https://open.spotify.com/search/death%20metal"
+      target="_blank"
+      class="mt-4 px-6 py-3 bg-red-700 hover:bg-red-800 text-white rounded-lg text-lg font-mono transition"
+    >
+      🎧 Summon Birthday Metal
+    </a>
+
+    <!-- Summon Toast button -->
+    <button
+      onclick="summonToast()"
+      class="mt-6 px-6 py-2 bg-yellow-400 text-black font-bold rounded-full hover:bg-yellow-500 transition z-10"
+    >
+      🍞 Summon More Toast
+    </button>
+
+    <!-- Toast Container -->
+    <div
+      id="toastContainer"
+      class="absolute inset-0 z-0 pointer-events-none"
+    ></div>
+
+    <!-- Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script>
+      // 🎉 Confetti on load
+      window.onload = () => {
+        confetti({
+          particleCount: 120,
+          spread: 90,
+          origin: { y: 0.6 },
+        });
+      };
+
+      // 🍞 Toast spawner
+      function summonToast() {
+        const toast = document.createElement("div");
+        toast.innerText = "🍞";
+        toast.className = "absolute text-3xl animate-bounce";
+        toast.style.left = Math.random() * window.innerWidth + "px";
+        toast.style.top = Math.random() * window.innerHeight + "px";
+        document.getElementById("toastContainer").appendChild(toast);
+
+        // Remove toast after a few seconds
+        setTimeout(() => toast.remove(), 4000);
+      }
+    </script>
+  </body>
+</html>
